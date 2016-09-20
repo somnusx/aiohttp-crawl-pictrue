@@ -1,7 +1,6 @@
 import os
 import re
 import time
-import random
 import asyncio
 from aiohttp import ClientSession
 from pyquery import PyQuery as q
