@@ -1,4 +1,3 @@
-import os
 import re
 import time
 import asyncio
@@ -20,14 +19,12 @@ async def down(url):
                 f.write(i+'\n')
 
 if __name__ == '__main__':
-    if not os.path.exists('picture'):
-        os.mkdir('picture')
     f = open('picture.txt','w')
     start = time.clock()
     loop = asyncio.get_event_loop()
     tasks = []
     url = 'http://jandan.net/pic/page-{}{}'
-    for i in range(1,1910):
+    for i in range(1800,1910):
         task = asyncio.ensure_future(down(url.format(i,'#comments')))
         tasks.append(task)
     loop.run_until_complete(asyncio.wait(tasks))
